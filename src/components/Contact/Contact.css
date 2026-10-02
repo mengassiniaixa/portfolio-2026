@@ -1,0 +1,276 @@
+/* ============================================
+   CONTACT — Grid 2 columnas (info + form)
+   Un solo elemento brutalist focal: el botón de submit.
+   ============================================ */
+
+.contact {
+  padding: var(--space-9) var(--container-padding);
+}
+
+.contact__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+/* ===== Header ===== */
+.contact__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 48rem;
+}
+
+.contact__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contact__title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-heading);
+  margin: 0;
+}
+
+.contact__title-dot {
+  color: var(--color-accent-pink);
+}
+
+.contact__lede {
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text);
+  margin: var(--space-2) 0 0;
+}
+
+/* ===== Grid ===== */
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: var(--space-8);
+  align-items: start;
+}
+
+/* ===== Aside (info directa) ===== */
+.contact__aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.contact__direct {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.contact__direct-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.contact__direct-dot {
+  color: var(--color-accent-pink);
+}
+
+.contact__direct-value {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  letter-spacing: -0.01em;
+  color: var(--color-text-heading);
+  text-decoration: none;
+  word-break: break-word;
+  transition: color var(--transition-fast);
+}
+
+.contact__direct-value:hover {
+  color: var(--color-accent-pink);
+}
+
+/* ===== Socials ===== */
+.contact__socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact__social {
+  border-top: var(--border-thin) solid color-mix(in srgb, var(--color-text) 15%, transparent);
+}
+
+.contact__social:last-child {
+  border-bottom: var(--border-thin) solid color-mix(in srgb, var(--color-text) 15%, transparent);
+}
+
+.contact__social-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.contact__social-link:hover {
+  color: var(--color-accent-pink);
+}
+
+.contact__social-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.contact__social-handle {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  color: inherit;
+}
+
+/* ===== Form ===== */
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.field__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.field__input {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  color: var(--color-text-heading);
+  background-color: var(--color-bg-surface);
+  border: var(--border-base) solid color-mix(in srgb, var(--color-text) 25%, transparent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  width: 100%;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.field__input:focus {
+  outline: none;
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.field__input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.field__input--textarea {
+  resize: vertical;
+  min-height: 8rem;
+  line-height: var(--lh-base);
+  font-family: var(--font-sans);
+}
+
+/* ===== Actions (único elemento brutalist focal) ===== */
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-2);
+}
+
+.contact__submit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+  color: #0a0a1f;
+  background-color: var(--color-accent-pink);
+  border: var(--border-base) solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-5);
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.contact__submit:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact__submit:active:not(:disabled) {
+  transform: translate(0, 0);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact__submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.contact__status {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  min-height: 1.25rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .contact {
+    padding: var(--space-8) var(--container-padding);
+  }
+
+  .contact__inner {
+    gap: var(--space-6);
+  }
+
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+}

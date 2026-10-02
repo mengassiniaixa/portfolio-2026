@@ -1,0 +1,290 @@
+/* ============================================
+   PROJECTS — Cards full-width con layout alternado
+   ============================================ */
+
+.projects {
+  padding: var(--space-9) var(--container-padding);
+}
+
+.projects__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+/* ===== Header ===== */
+.projects__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.projects__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.projects__title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-heading);
+  margin: 0;
+}
+
+.projects__title-dot {
+  color: var(--color-accent-pink);
+}
+
+/* ===== Lista ===== */
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ===== Project card ===== */
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-7);
+  align-items: center;
+}
+
+/* Alterna: proyectos pares tienen el media a la derecha */
+.project:nth-child(even) .project__media {
+  order: 2;
+}
+
+/* ===== Media ===== */
+.project__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: var(--border-base) solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-surface);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.project:hover .project__media {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.project__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder cuando no hay imagen */
+.project__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  text-align: center;
+  background-image: linear-gradient(
+    135deg,
+    var(--color-bg-surface) 0%,
+    color-mix(in srgb, var(--color-accent-pink) 20%, var(--color-bg-surface)) 100%
+  );
+}
+
+.project__placeholder-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.project__placeholder-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: var(--fs-lg);
+  color: var(--color-text-heading);
+  letter-spacing: -0.01em;
+}
+
+/* ===== Body ===== */
+.project__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.project__role {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.project__role-dot {
+  color: var(--color-accent-pink);
+}
+
+.project__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-heading);
+  margin: 0;
+}
+
+.project__description {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* ===== Stack pills ===== */
+.project__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-1) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project__stack-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  padding: var(--space-1) var(--space-3);
+  border: var(--border-thin) solid color-mix(in srgb, var(--color-text) 30%, transparent);
+  border-radius: var(--radius-full);
+}
+
+/* ===== Actions ===== */
+.project__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-2);
+}
+
+/* Primary CTA — brutalist pink */
+.project__cta--primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-sm);
+  color: #0a0a1f;
+  text-decoration: none;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-accent-pink);
+  border: var(--border-base) solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-sm);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.project__cta--primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+  color: #0a0a1f;
+}
+
+.project__cta--primary:active {
+  transform: translate(0, 0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Secondary CTA — texto con underline animado */
+.project__cta--secondary {
+  position: relative;
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--space-1) 0;
+  transition: color var(--transition-fast);
+}
+
+.project__cta--secondary::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent-pink);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--transition-base);
+}
+
+.project__cta--secondary:hover {
+  color: var(--color-text-heading);
+}
+
+.project__cta--secondary:hover::after {
+  transform: scaleX(1);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .projects {
+    padding: var(--space-8) var(--container-padding);
+  }
+
+  .projects__inner {
+    gap: var(--space-7);
+  }
+
+  .projects__list {
+    gap: var(--space-7);
+  }
+
+  .project {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  /* En mobile, el media siempre va arriba, no alterna */
+  .project:nth-child(even) .project__media {
+    order: 0;
+  }
+
+  .project__media {
+    aspect-ratio: 16 / 9;
+  }
+}

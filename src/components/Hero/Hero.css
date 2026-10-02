@@ -1,0 +1,200 @@
+/* ============================================
+   HERO — Minimalista con brutalism selectivo
+   ============================================ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: var(--space-8) var(--container-padding);
+}
+
+.hero__inner {
+  max-width: var(--container-max);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+/* ===== Badge "disponible" ===== */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-bg-surface);
+  border: var(--border-thin) solid var(--color-border);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero__badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5);
+  animation: hero-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hero-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+}
+
+/* ===== Título ===== */
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.hero__greeting {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-regular);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--color-text-muted);
+  letter-spacing: 0;
+  text-transform: lowercase;
+}
+
+.hero__name {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--color-text-heading);
+}
+
+.hero__name-dot {
+  color: var(--color-accent-pink);
+}
+
+/* ===== Rol ===== */
+.hero__role {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: var(--space-3);
+}
+
+/* ===== Descripción ===== */
+.hero__description {
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  color: var(--color-text);
+  line-height: var(--lh-relaxed);
+  max-width: 52ch;
+}
+
+/* ===== Actions ===== */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+  margin-top: var(--space-3);
+}
+
+/* Primary CTA — brutalist pink */
+.hero__cta--primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+  color: #0a0a1f;
+  text-decoration: none;
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--color-accent-pink);
+  border: var(--border-base) solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-sm);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.hero__cta--primary:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-lg);
+  color: #0a0a1f;
+}
+
+.hero__cta--primary:active {
+  transform: translate(0, 0);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Secondary CTA — texto con underline animado */
+.hero__cta--secondary {
+  position: relative;
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--space-1) 0;
+  transition: color var(--transition-fast);
+}
+
+.hero__cta--secondary::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent-pink);
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition: transform var(--transition-base);
+}
+
+.hero__cta--secondary:hover {
+  color: var(--color-text-heading);
+}
+
+.hero__cta--secondary:hover::after {
+  transform: scaleX(0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 72px);
+    padding: var(--space-7) var(--container-padding) var(--space-8);
+  }
+
+  .hero__inner {
+    gap: var(--space-4);
+  }
+
+  .hero__description {
+    font-size: var(--fs-base);
+  }
+
+  .hero__cta--primary {
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--fs-sm);
+  }
+}
