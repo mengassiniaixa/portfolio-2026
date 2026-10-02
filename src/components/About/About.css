@@ -1,0 +1,130 @@
+/* ============================================
+   ABOUT — Minimalista con card brutalist selectiva
+   ============================================ */
+
+.about {
+  padding: var(--space-9) var(--container-padding);
+}
+
+.about__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+/* ===== Header ===== */
+.about__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.about__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.about__title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-text-heading);
+  margin: 0;
+}
+
+.about__title-dot {
+  color: var(--color-accent-pink);
+}
+
+/* ===== Content grid ===== */
+.about__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: start;
+}
+
+/* ===== Bio ===== */
+.about__bio {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.about__bio p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  color: var(--color-text);
+  line-height: var(--lh-relaxed);
+}
+
+/* ===== Facts list ===== */
+.about__facts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4) 0;
+  border-top: var(--border-thin) solid color-mix(in srgb, var(--color-text) 15%, transparent);
+}
+
+.fact:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.fact__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.fact__label-dot {
+  color: var(--color-accent-pink);
+}
+
+.fact__value {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-heading);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .about {
+    padding: var(--space-8) var(--container-padding);
+  }
+
+  .about__inner {
+    gap: var(--space-6);
+  }
+
+  .about__content {
+    grid-template-columns: 1fr;
+    gap: var(--space-7);
+  }
+
+  .about__bio p {
+    font-size: var(--fs-base);
+  }
+}
